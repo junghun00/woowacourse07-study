@@ -24,8 +24,7 @@ public class Service {
         try {
             return Integer.parseInt(tryCount);
         } catch (NumberFormatException e) {
-            System.out.println("숫자만 입력해 주세요.");
+            throw new NumberFormatException("숫자를 입력해 주세요");
         }
-        return 0;
     }
 }
