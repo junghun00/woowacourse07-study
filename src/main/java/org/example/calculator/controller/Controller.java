@@ -18,8 +18,7 @@ public class Controller {
     }
 
     public void run() {
-        List<String> parseStrings = inputDate();
-        Calculator calculator = new Calculator(parseStrings);
+        Calculator calculator = inputDate();
         addString(calculator);
     }
 
@@ -28,9 +27,10 @@ public class Controller {
         outputView.result(calculator);
     }
 
-    private List<String> inputDate() {
+    private Calculator inputDate() {
         String inputString = inputView.inputDate();
-        return service.parseData(inputString);
+        List<String> parseStrings = service.parseData(inputString);
+        return new Calculator(parseStrings);
     }
 
 }
